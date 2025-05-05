@@ -1,0 +1,11 @@
+<div class="content">
+  <div class="header-pages">
+    <%= render partial: "layouts/header" , locals: {title: "Меню"}%>
+    <%= button_to chip_baskets_path, class: "btn-cart", method: :get do %>
+      <i class="fa-solid fa-cart-shopping"></i>
+    <% end %>
+  </div>
+  <div class="dishes-content">
+    <%= render partial: "dish_and_drinks/content", locals: { menu: @menu } %>
+  </div>
+</div>

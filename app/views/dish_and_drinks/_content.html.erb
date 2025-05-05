@@ -1,0 +1,15 @@
+<div class="btn-category">
+  <%= link_to "Меню", request.path, class: "btn" %>
+  <% @menu.where(category: @category).pluck(:category_type).uniq.each do |category|%>
+    <%= link_to category, request.path + "?category=#{category}", class: "btn"%>
+  <% end %>
+</div>
+
+<main class="dishes-content">
+  <% @filter_category.pluck(:category_type).uniq.each do |category| %>
+    <h2><%= category %></h2>
+    <% @filter_category.where(category_type:category).uniq.each do |menu_item| %>
+      <%= render partial: "dish_and_drinks/menu_item", locals: { menu_item: menu_item}%>
+    <% end %>
+  <% end %>
+</main>

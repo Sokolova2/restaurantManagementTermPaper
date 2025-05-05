@@ -1,0 +1,101 @@
+.search{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding: 2rem;
+  .search-txt{
+    font: 1.5rem "Times New Roman";
+  }
+  .search-form{
+    width: 3rem;
+    height: 1.5rem;
+    font-size: 1rem;
+  }
+  .search-btn{
+    width: 8rem;
+    height: 2.5rem;
+    background-color: #acacac;
+    font-size: 1.2rem;
+    border: 1px solid #261B23;
+    padding: 0.5rem;
+  }
+}
+
+.content-order-pay{
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  .order{
+    display: block;
+    border: 1px solid #908D8D;
+    padding: 1rem;
+    .header-order{
+      font-size: 1.3rem;
+      padding: 1rem;
+      text-align: center;
+      margin: 0.5rem;
+    }
+  }
+}
+
+.order-dishes{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.order-dishes p{
+  flex-grow: 1;
+}
+
+.text-dishes{
+  width: 5rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.dishes-describe{
+  text-align: center;
+}
+
+.btn-payment{
+  display: flex;
+  justify-content: center;
+}
+
+.btn-pay{
+  width: 8rem;
+  height: 2.5rem;
+  background-color: #acacac;
+  font-size: 1.2rem;
+  border: 1px solid #261B23;
+  padding: 0.5rem;
+}
+
+.payment-form{
+  display: flex;
+  flex-direction: column;
+}
+
+#card-element{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #261B23;
+}
+
+.make-payment{
+  background-color: #acacac;
+  width: 100%;
+  height: 2rem;
+}
+
+.text-pay{
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.text-amount{
+  height: 1.5rem;
+}

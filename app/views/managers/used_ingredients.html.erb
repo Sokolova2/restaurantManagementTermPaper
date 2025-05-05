@@ -1,0 +1,30 @@
+<%= render partial: "managers/header", locals: {title: "Використані інгредієнти"} %>
+<p class="text-content-header">Дані</p>
+<%= form_with url: used_ingredients_managers_path, method: :get, local:true do%>
+  <div>
+    <div class="form-data-content">
+      <label class="text-content-product" for="start_date">з</label>
+      <%= date_field_tag :start_date, params[:start_date], class: "form-data"%>
+    </div>
+  </div>
+  <div>
+    <div class="form-data-content">
+      <label class="text-content-product" for="start_date">по</label>
+      <%= date_field_tag :end_date, params[:end_date], class: "form-data" %>
+    </div>
+  </div>
+  <div class="btn-data-search">
+    <%= submit_tag "Знайти", class: "btn-data"%>
+  </div>
+<% end %>
+
+<div class="manager_content">
+  <p class="ingredient-title">Продукт</p>
+  <p class="ingredient-title">Грам</p>
+</div>
+<% @ingredients_count.each do |name, count| %>
+  <div class="manager_content">
+    <p class="ingredient-dish"><%= name %></p>
+    <p class="ingredient-dish"><%= count %></p>
+  </div>
+<% end %>

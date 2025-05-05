@@ -1,0 +1,78 @@
+<div class="navigation">
+  <img class="logotype" src="/images/logotype.jpg" alt="Зображення логотипу ресторана">
+ <% if session[:employee_id] %>
+    <div class="login-form">
+      <span class="login"><%= session[:employee_name] %></span>
+      <div class="btn-employee">
+        <% if @employee&.job_title == "Керівник" %>
+          <%= button_to "Адмін панель", managers_path, class: "btn-logout", method: :get %>
+        <% end %>
+        <%= button_to "Вийти", logout_path, class: "btn-logout", method: :delete %>
+      </div>
+    </div>
+  <% else %>
+    <%= button_to account_index_path, method: :get, class: "btn-account" do %>
+      <i class="fa-solid fa-circle-user"></i>
+    <% end %>
+  <% end %>
+</div>
+<header class="header">
+  <nav class="nav">
+
+  </nav>
+  <h1 class="name-restaurant" style="font-family: 'Times New Roman', Times, serif;">Le Jardin</h1>
+  <p class="describe">Ресторан французької кухні</p>
+</header>
+
+<main class="main-content">
+  <div class="title-content">
+    <p class="text-ttl"><span>DIGITAL MENU</span></p>
+  </div>
+
+  <div class="chapter">
+    <p class="chapter-menu"><%= link_to 'МЕНЮ/MENU',  dishes_dish_and_drinks_path, class:'chapter-menu'%></p>
+    <%= button_to dishes_dish_and_drinks_path, method: :get, class: "btn-transition" do %>
+      <i class="fa-solid fa-circle-chevron-right"></i>
+    <% end %>
+  </div>
+
+  <div class="chapter">
+    <p class="chapter-menu"><%= link_to 'БАР/BAR', bar_dish_and_drinks_path, class:'chapter-menu'%></p>
+    <%= button_to bar_dish_and_drinks_path, method: :get, class: "btn-transition" do %>
+      <i class="fa-solid fa-circle-chevron-right"></i>
+    <% end %>
+  </div>
+
+  <div class="chapter">
+    <p class="chapter-menu"><%= link_to 'ОПЛАТА/PAYMENT',  payments_path, class:'chapter-menu'%></p>
+    <%= button_to payments_path, method: :get, class: "btn-transition" do %>
+      <i class="fa-solid fa-circle-chevron-right"></i>
+    <% end %>
+  </div>
+
+  <% if session[:employee_id] %>
+    <div class="chapter">
+      <p class="chapter-menu"><%= link_to 'ЗАМОВЛЕННЯ',  @order, class:'chapter-menu'%></p>
+      <%= button_to @order, method: :get, class: "btn-transition" do %>
+        <i class="fa-solid fa-circle-chevron-right"></i>
+      <% end %>
+    </div>
+    <div class="chapter">
+      <p class="chapter-menu"><%= link_to 'Обрати столик', tables_path, class:'chapter-menu'%></p>
+      <%= button_to tables_path, method: :get, class: "btn-transition" do %>
+        <i class="fa-solid fa-circle-chevron-right"></i>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="title-content">
+    <p class="text-ttl"><span>ПОСИЛАННЯ</span></p>
+  </div>
+
+  <div class="chapter">
+    <p class="chapter-menu"><%= link_to 'Надіслати відгук', feedbacks_and_suggestions_path, class:'chapter-menu'%></p>
+    <%= button_to feedbacks_and_suggestions_path, method: :get, class: "btn-transition" do %>
+      <i class="fa-solid fa-circle-chevron-right"></i>
+    <% end %>
+  </div>
+</main>

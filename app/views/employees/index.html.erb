@@ -1,0 +1,46 @@
+<%= render partial: "managers/header", locals: {title: "Співробітники"} %>
+<div>
+  <div class="employee-content">
+    <% @employee.each do |employee| %>
+      <%= button_to employee_path(employee), method: :get, class: "employee-btn" do %>
+        <%= employee.full_name %>
+      <% end %>
+    <% end %>
+  </div>
+  <%= form_with model: @employee, url: employees_path, method: :post do |form| %>
+    <div class="content-add-form">
+      <div class="form-add">
+        <div>
+          <p class="text-employee">Прізвище</p>
+          <%= form.text_field :last_name, class: "form-employee" %>
+        </div>
+        <div>
+          <p class="text-employee">Ім`я</p>
+          <%= form.text_field :first_name, class: "form-employee" %>
+        </div>
+        <div>
+          <p class="text-employee">По-батькові</p>
+          <%= form.text_field :parent_name, class: "form-employee" %>
+        </div>
+      </div>
+      <div class="form-add">
+        <div>
+          <p class="text-employee">Посада: </p>
+          <%= form.text_field :job_title, class: "form-employee" %>
+        </div>
+        <div>
+          <p class="text-employee">Номер телефону: </p>
+          <%= form.text_field :phone_number, class: "form-employee" %>
+        </div>
+        <div>
+          <p class="text-employee">Пароль: </p>
+          <%= form.text_field :password, class: "form-employee" %>
+        </div>
+      </div>
+      <div class="add-employee">
+        <%= form.submit "Додати нового співробітника", class: "btn-add-employee"%>
+      </div>
+    </div>
+  <% end %>
+</div>
+

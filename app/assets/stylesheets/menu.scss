@@ -1,0 +1,198 @@
+.content{
+  background-color: #e3e3e3;
+}
+
+.dishes-content{
+  background-color: #e3e3e3;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+}
+
+.dish-content{
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background-color: #FFFFFF;
+  border: 1px solid #908D8D;
+}
+
+.name-dishes{
+  font-size: 1.5rem ;
+  font-weight: bold;
+}
+
+.price-dish{
+  display: flex;
+  font-size: 1.3rem;
+  align-items: center;
+  height: 100%;
+}
+
+.btn-category{
+  background-color: #FFFFFF;
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.btn{
+  font-size: 1.7rem;
+  font-family: "Times New Roman", Times, serif;
+  height: 3rem;
+  width: 10rem;
+  background-color: #FFFFFF;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  text-decoration: none;
+  color: #000000;
+}
+
+.image-food{
+  width: 1rem;
+  height: 1rem;
+}
+
+.dish-image{
+  width: 9rem;
+  height: 9rem;
+  padding-right: 1rem;
+}
+
+.about-dishes{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+
+.space-dishes{
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+}
+
+.icons{
+  display: flex;
+  padding-right: 1rem;
+}
+
+.chip-basket{
+  border: 1px solid #000000;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 1rem;
+}
+
+.chip-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.space-dish{
+  display: block;
+  padding-right: 1rem;
+}
+
+.input-number{
+  width: 1.5rem;
+  height: 1rem;
+}
+
+.form-object{
+  display: flex;
+  margin-left: 1rem;
+}
+
+.info-dishes{
+  width: 35rem;
+}
+
+.create-cart-items{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-add-to-cart{
+  display: flex;
+  font-size: 1.1rem;
+  align-items: center;
+  height: 3rem;
+  background-color: #acacac;
+}
+
+.btn-cart{
+  border: none;
+  background: none;
+}
+
+.quantity-input{
+  width: 2rem;
+}
+
+.dish-ordering{
+  display: flex;
+  gap: 1rem;
+}
+
+.menu-content{
+  display: block;
+}
+
+.dish-and-drink-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  margin: 2rem ;
+  max-width: 1200px;
+  width: 50%;
+  height: 2rem;
+  font-size: 1.2rem;
+  padding: 1.2rem;
+  background-color: #acb4b8
+}
+
+.dish-and-drink-content{
+  padding: 1rem;
+  border: 1px solid #000000;
+}
+
+.dish-and-drink-update{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.dish-and-drink-text{
+  font-size: 1.2rem;
+}
+
+.dish-and-drink-form{
+  height: 1.5rem;
+}
+
+.form-update{
+  display: flex;
+  gap: 4.2rem;
+}
+
+.btn-dish-and-drink-add{
+  display: flex;
+  justify-content: center;
+}
+
+.btn-add-menu{
+  background-color: #acacac;
+  margin: 1.5rem;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}

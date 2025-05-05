@@ -1,0 +1,114 @@
+.navigation{
+  position: fixed;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  z-index: 2;
+  height: 5rem;
+}
+
+.header{
+  padding-top: 80px;
+  .nav{
+    display: flex;
+    justify-content: space-between;
+    background-image: url('/images/restaurant.jpeg');
+    height: 20rem;
+
+    .fa-brands {
+      width: 100%;
+      z-index: 1;
+    }
+  }
+
+  .name-restaurant{
+    font-size: 2.2rem;
+    text-shadow: 0rem 0.3rem 2px darkgray;
+    margin-left: 1rem;
+  }
+
+  .describe{
+    font-size: 1.5rem;
+    color: #908D8D;
+    margin-left: 1rem;
+  }
+}
+
+.navigation .fa-brands{
+  font-size: 3rem;
+}
+
+.logotype{
+  width: 5rem;
+  height: 5rem;
+  margin: 1.5rem;
+}
+
+.header-pages{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.fa-solid{
+  font-size: 25px;
+}
+
+.header-content{
+  display: flex;
+}
+
+.btn-home{
+  border: none;
+  background: none;
+  height: 100%;
+  .fa-solid{
+    font-size: 2rem;
+  }
+}
+
+.btn-account{
+  height: 100%;
+  border: none;
+  background: none;
+}
+
+.search-content{
+  display: flex;
+  gap: 1rem;
+}
+
+.search-button{
+  border: none;
+  background: none;
+  padding-top: 1rem;
+}
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  background-color: #acacac;
+  border-radius: 0.7rem;
+  padding: 0.5rem;
+  align-items: center;
+}
+
+.login{
+  font-size: 1.2rem;
+}
+
+.btn-employee{
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-logout{
+  background-color: #acacac;
+}
+

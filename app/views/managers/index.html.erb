@@ -1,0 +1,14 @@
+<div class="button-manager">
+  <%= render partial: "layouts/header", locals: {title: "Панель керівника"} %>
+  <div>
+    <%= button_to 'Співробітники', employees_path, method: :get, class: "btn-manager"%>
+
+    <%= button_to 'Страви та напої',  dish_and_drink_managers_path, method: :get, class: "btn-manager" %>
+
+    <%= button_to 'Згенерувати звіт "Використані продукти"', used_ingredients_managers_path, method: :get, class: "btn-manager" %>
+
+    <%= button_to 'Згенерувати звіт "Найпопулярніші страви"',  popular_dish_managers_path, method: :get, class: "btn-manager" %>
+
+    <%= button_to 'Згенерувати звіт "К-ть обслуговані замовлення офіціантами"', tables_served_by_a_waitor_managers_path, method: :get, class: "btn-manager" %>
+  </div>
+</div>

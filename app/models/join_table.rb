@@ -1,0 +1,2 @@
+class JoinTable < ApplicationRecord
+end

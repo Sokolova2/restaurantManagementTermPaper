@@ -1,0 +1,36 @@
+<%= render partial: "managers/header", locals: {title: "Співробітник"} %>
+<div>
+
+  <%= form_with model: @employee, method: :put do |form| %>
+    <div class="content-add-form">
+      <div class="form-add">
+        <div>
+          <p class="text-employee">Прізвище</p>
+          <%= form.text_field :last_name, value: @employee.last_name, class: "form-employee"%>
+        </div>
+        <div>
+          <p class="text-employee">Ім`я</p>
+          <%= form.text_field :first_name, value: @employee.first_name, class: "form-employee"%>
+        </div>
+        <div>
+          <p class="text-employee">По-батькові</p>
+          <%= form.text_field :parent_name, value: @employee.parent_name, class: "form-employee"%>
+        </div>
+      </div>
+      <div class="form-add">
+        <div>
+          <p class="text-employee">Посада:</p>
+          <%= form.text_field :job_title,  value: @employee.job_title, class: "form-employee"%>
+        </div>
+        <div>
+          <p class="text-employee">Номер телефону: </p>
+          <%= form.text_field  :phone_number, value: @employee.phone_number, class: "form-employee"%>
+        </div>
+      </div>
+      <div class="add-employee">
+        <%= form.submit "Оновити", class: "btn-add-employee" %>
+        <%= button_to "Видалити", employee_path(@employee), method: :delete, class: "btn-add-employee"%>
+      </div>
+    <% end %>
+  </div>
+</div>

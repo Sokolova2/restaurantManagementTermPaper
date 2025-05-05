@@ -1,0 +1,49 @@
+.employee-content{
+  display: block;
+}
+
+.employee-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  margin: 2rem ;
+  max-width: 1200px;
+  width: 50%;
+  height: 2rem;
+  font-size: 1.2rem;
+  padding: 1.2rem;
+  background-color: #acb4b8
+}
+
+.form-add{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.add-employee{
+  display: flex;
+  justify-content: center;
+  margin: 1.2rem;
+  gap: 1rem;
+}
+
+.btn-add-employee{
+  font-size: 1.2rem;
+  padding: 0.6rem;
+  background-color: #acacac;
+}
+
+.text-employee{
+  font-size: 1.2rem;
+}
+
+.form-employee{
+  height: 1.5rem;
+}
+
+.content-add-form{
+  padding: 1rem;
+  border: 1px solid #000000;
+}

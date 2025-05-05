@@ -1,0 +1,20 @@
+<div>
+  <%= form_with(url: account_index_path, method: :get, data: { turbo: false }) do |form|%>
+    <%= hidden_field_tag :table_id, 1 %>
+    <div class="account-form">
+      <%= form.label 'Ваш id', class: "text-account"%>
+      <%= form.text_field :id, class: "form-text-account" %>
+      <%= form.label 'Ваш пароль', class: "text-account"%>
+      <%= form.text_field :password, class: "form-text-account" %>
+      <%= form.submit 'Увійти', class: "account-submit"%>
+      <% if flash[:error]%>
+        <div class="text-account"><%= flash[:error]%></div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+

@@ -1,0 +1,32 @@
+<%= render partial: "managers/header", locals: {title: "Страви та напої"} %>
+<div class="menu-content">
+  <% @dish_and_drink.each do |dish_and_drink| %>
+    <%= button_to dish_and_drink_path(dish_and_drink), method: :get, class: "dish-and-drink-btn" do %>
+      <%= dish_and_drink.name %>
+    <% end %>
+  <% end %>
+</div>
+<%#= form_with model: @dish_and_drink, url: dish_and_drinks_path, method: :post do |form| %>
+<!--  <div>-->
+<!--    <p>Назва страви: </p>-->
+    <%#= form.text_field :name%>
+<!--  </div>-->
+<!--  <div>-->
+<!--    <p>Грам: </p>-->
+    <%#= form.text_field :grams %>
+<!--  </div>-->
+<!--  <div>-->
+<!--    <p>Категорія (Food or Drink): </p>-->
+    <%#= form.text_field :category %>
+<!--  </div>-->
+<!--  <div>-->
+<!--    <p>Категорія страви: </p>-->
+    <%#= form.text_field :category_type %>
+<!--  </div>-->
+<!--  <div>-->
+<!--    <p>Ціна: </p>-->
+    <%#= form.text_field :price %>
+<!--  </div>-->
+  <%#= form.submit "Додати нову страву" %>
+<%# end %>
+

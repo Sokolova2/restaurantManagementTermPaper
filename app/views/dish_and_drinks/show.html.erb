@@ -1,0 +1,35 @@
+<%= render partial: "managers/header", locals: {title: "Страви та напої"} %>
+<div>
+
+  <%= form_with model: @dish_and_drink, method: :put do |form| %>
+    <div class="dish-and-drink-content">
+      <div class="dish-and-drink-forms">
+        <div class="form-update">
+          <div>
+            <p class="dish-and-drink-text">Назва страви: </p>
+            <%= form.text_field :name, value: @dish_and_drink.name, class: "dish-and-drink-form"%>
+          </div>
+          <div >
+            <p class="dish-and-drink-text">Грам: </p>
+            <%= form.number_field :grams,  value: @dish_and_drink.grams, class: "dish-and-drink-form"%>
+          </div>
+          <div>
+            <p class="dish-and-drink-text">Категорія(Food or Drink): </p>
+            <%= form.text_field :category, value: @dish_and_drink.category, class: "dish-and-drink-form"%>
+          </div>
+          <div>
+            <p class="dish-and-drink-text">Категорія страви: </p>
+            <%= form.text_field  :category_type, value: @dish_and_drink.category_type, class: "dish-and-drink-form"%>
+          </div>
+          <div>
+            <p class="dish-and-drink-text">Ціна: </p>
+            <%= form.number_field  :price, value: @dish_and_drink.price, class: "dish-and-drink-form" %>
+          </div>
+        </div>
+      </div>
+      <div class="btn-dish-and-drink-add">
+        <%= form.submit "Оновити" , class: "btn-add-menu"%>
+      </div>
+    </div>
+  <% end %>
+</div>

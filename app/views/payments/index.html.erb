@@ -1,0 +1,43 @@
+<div>
+  <%= render partial: "layouts/header" , locals: {title: "Оплата"}%>
+  <% if @order.present? %>
+    <div class="content-order-pay">
+      <div class="order">
+        <h3 class="header-order">Ваш рахунок: </h3>
+
+        <p class="dishes-describe">Номер замовлення: <%= @order.id %></p>
+        <p class="dishes-describe">Дата: <%= @order.created_at.strftime("%d.%m.%Y %I:%M") %></p>
+
+        <div class="order-dishes">
+          <p class="text-dishes">Назва:</p>
+          <p class="text-dishes">Кількість:</p>
+          <p class="text-dishes">Гр:</p>
+          <p class="text-dishes">Сума:</p>
+        </div>
+
+        <% @order.order_items.each do |order_item| %>
+          <% dish = order_item.dish_and_drink %>
+          <div class="order-dishes">
+            <p class="text-dishes"><%= dish.name %></p>
+            <p class="text-dishes"><%= order_item.number_of_dishes %></p>
+            <p class="text-dishes"><%= dish.grams %></p>
+            <p class="text-dishes"><%= dish.price * order_item.number_of_dishes %> грн</p>
+          </div>
+        <% end %>
+
+        <p class="dishes-describe">Загальна сума: <%= @order.full_price %> грн</p>
+
+        <div class="btn-payment">
+          <%= button_to pay_payment_path(@order), method: :get, class: "btn-pay" do %>
+            Оплатити
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <p>Немає рахунку для цього столика</p>
+  <% end %>
+</div>
+
+
+

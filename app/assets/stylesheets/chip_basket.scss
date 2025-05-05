@@ -1,0 +1,42 @@
+.header-cart{
+  text-align: center;
+}
+
+.info-cart{
+  background-color: #e3e3e3;
+  border: 1px solid #acacac;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.number-of-dishes{
+  display: flex;
+  gap: 1rem;
+  padding-right: 5rem;
+}
+
+.input-number-of-dishes{
+  width: 2rem;
+  height: 50%;
+  align-self: center;
+}
+
+.dishes-describe{
+  font-size: 1.3rem;
+}
+
+.btn-cart{
+  display: flex;
+  justify-content: center;
+}
+
+.button-order{
+  font-size: 1.2rem;
+  padding: 1rem;
+  background-color: #acacac;
+}
+
+.btn-cart{
+  height: 100%;
+  padding: 1rem;
+}

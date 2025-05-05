@@ -1,0 +1,11 @@
+<%= render partial: "managers/header", locals: {title: "Столики"} %>
+<% @table.each do |table| %>
+  <% employee = table.employee %>
+    <p>Столик №<%= table.table_number %></p>
+    <p>Cпівробітник що відповідає: <%= employee.full_name %></p>
+  <%= form_with url: waitor_of_tables_managers_path(table_number: table.table_number), method: :patch, local: true do |form| %>
+    <%= form.label :employee_id, "Оберіть офіціанта" %>
+    <%= form.collection_select :employee_id, @employee, :id, :full_name, prompt: "Оберіть офіціанта" %>
+    <%= form.submit "Додати офіціанта" %>
+  <% end %>
+<% end %>

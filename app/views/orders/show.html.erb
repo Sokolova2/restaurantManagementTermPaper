@@ -1,0 +1,52 @@
+<div>
+  <%= render partial: "layouts/header", locals: {title: "Замовлення"} %>
+
+  <% if @order.present? && @order.order_status != "Сплачено"%>
+    <h3 class="header-cart">Ваше замовлення</h3>
+
+    <% unless @order.employee_id.nil? %>
+      <p class="text-dishes"><%= @employee_name %></p>
+    <% end %>
+
+    <div class="content-order">
+      <% @order.order_items.each do |order_item| %>
+        <% dish = order_item.dish_and_drink %>
+        <div class="info-order">
+          <div class="order-dishes">
+            <p class="text-dishes-order"><%= dish.name %></p>
+            <input type="number" value="<%= order_item.number_of_dishes %>" class="input-number-of-dishes">
+            <p class="text-dishes"><%= dish.grams %> гр</p>
+            <p class="text-dishes"><%= order_item.dish_status %></p>
+            <p class="text-dishes"><%= dish.price * order_item.number_of_dishes %> грн</p>
+
+            <% if @order.order_status == "Прийнято" && order_item.dish_status != "Виконано" %>
+              <%= button_to order_mark_dish_done_path(@order, order_item_id: order_item.id), method: :patch do %>
+                Виконано
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+      <p class="dishes-describe">Загальна сума: <%= @order.full_price %> грн</p>
+
+      <% if @order.order_status == "Оформлено" %>
+        <div class="btn-order">
+          <%= button_to accept_order_order_path(@order), method: :patch, class: "button-order" do %>
+            Прийняти замовлення
+          <% end %>
+        </div>
+      <% end %>
+
+      <% if @order.order_items.all? { |item| item.dish_status == "Виконано" } && @order.order_status != "Сплачено" %>
+        <%= button_to mark_paid_order_path(@order), method: :patch do %>
+          Сплачено
+        <% end %>
+
+        <%= button_to payments_path(@order), method: :get do %>
+          Сформувати рахунок
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,28 @@
+<div class="container" >
+  <%= render partial: "layouts/header" , locals: {title: "Відгуки та пропозиції"}%>
+  <div class="feedback-content">
+    <%= form_with model: @feedback_and_suggestion, url: feedbacks_and_suggestions_path, method: :post do |form| %>
+      <p class="feedback-text"><%= form.label :feedback, 'Залиште відгук' %></p>
+      <p><%= form.text_field :feedback, class: "feedback-form" %></p>
+      <p class="feedback-text"><%= form.label :phone_number, 'Ваш номер телефону' %></p>
+      <p><%= form.text_field :phone_number, class: "phone-form" %></p>
+      <p><%= form.submit 'Відправити', class: "feedback-submit"%></p>
+    <% end %>
+  </div>
+
+  <div class="form-message">
+    <% if flash[:notice]%>
+      <div class="message">
+        <div class="text-message">
+          <div><%= flash[:notice] %></div>
+          <%= button_to feedbacks_and_suggestions_path, class: "close-btn" do %>
+            <p class="text-btn">Закрити</p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+

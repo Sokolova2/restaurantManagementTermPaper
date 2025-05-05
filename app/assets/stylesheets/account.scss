@@ -1,0 +1,29 @@
+.account-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 7rem;
+}
+
+.text-account{
+  margin-top: 1.5rem;
+  justify-content: start;
+  font-size: 1.5rem;
+}
+
+.form-text-account{
+  width: 50%;
+  height: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+.account-submit{
+  width: 38rem;
+  height: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+.account-submit{
+  background-color: #acacac;
+  margin-bottom: 8rem;
+}

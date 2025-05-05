@@ -1,0 +1,7 @@
+<div class="table-content">
+  <% @table.each do |table|%>
+    <%= button_to table_path(table.table_number), method: :get, class: "table-btn" do %>
+      Столик №<%= table.table_number %>
+    <% end %>
+  <% end %>
+</div>

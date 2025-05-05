@@ -1,0 +1,2 @@
+module DishAndDrinksHelper
+end

@@ -1,0 +1,73 @@
+.manager_content{
+  display: flex;
+  gap: 2rem;
+  justify-content: space-evenly;
+}
+
+.ingredient-title{
+  width: 8rem;
+  font-size: 1.5rem;
+}
+
+.ingredient-dish{
+  width: 15rem;
+  font-size: 1.2rem;
+}
+
+.header-managers-page{
+  display: flex;
+}
+
+.button-manager{
+  display: block;
+}
+
+.btn-manager{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  margin: 2rem ;
+  max-width: 1200px;
+  width: 50%;
+  height: 2rem;
+  font-size: 1.2rem;
+  padding: 1.2rem;
+  background-color: #acb4b8;
+}
+
+.text-content-header{
+  font-size: 1.7rem;
+  display: flex;
+  justify-content: center;
+}
+
+.text-content-product{
+  font-size: 1.4rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.form-data-content{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.form-data{
+  font-size: 1.2rem;
+}
+
+.btn-data{
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  background-color: #acacac;
+  width: 13rem;
+}
+
+.btn-data-search{
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}

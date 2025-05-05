@@ -1,0 +1,85 @@
+.container{
+  position: relative;
+}
+
+.feedback-content{
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+  max-width: 1200px;
+  width: 100%;
+
+  .feedback-text{
+    font-size: 1.3rem;
+  }
+
+  .feedback-form{
+    max-width: 30rem;
+    width: 100%;
+    height: 3rem;
+    font-size: 1.3rem;
+    font-family: "Times New Roman", Times, serif ;
+  }
+
+  .phone-form{
+    width: 30rem;
+    height: 3rem;
+    font-size: 1.3rem;
+    font-family: "Times New Roman", Times, serif ;
+  }
+
+  .feedback-submit{
+    width: 30rem;
+    height: 3rem;
+    background-color: #908D8D;
+  }
+}
+
+.form-message{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #EFEFEF;
+  z-index: 1;
+
+  .message{
+    border: 1px solid #261B23;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 32rem;
+    height: 18rem;
+
+    .text-message{
+      font-size: 2rem;
+    }
+
+    .close-btn{
+      border: 1px solid #261B23;
+      width: 6.5rem;
+      height: 3rem;
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      background-color: #5d5b5b;
+      margin-top: 5rem;
+      margin-left: 3.5rem;
+      font-size: 1.5rem;
+    }
+
+    .text-btn{
+      display: flex;
+      text-align: center;
+    }
+  }
+}
+
+
+
+

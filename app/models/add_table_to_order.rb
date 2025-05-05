@@ -1,0 +1,2 @@
+class AddTableToOrder < ApplicationRecord
+end

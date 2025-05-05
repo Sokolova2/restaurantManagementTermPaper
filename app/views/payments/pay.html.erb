@@ -1,0 +1,71 @@
+<div class="content">
+  <div class="header-pages">
+    <div class="header-content">
+      <%= button_to payments_path, method: :get, class: "btn-home" do %>
+        <i class="fa-solid fa-circle-chevron-left"></i>
+      <% end %>
+      <h2>Оплата</h2>
+    </div>
+  </div>
+</div>
+
+<turbo-frame id="payment">
+  <%= form_with url: pay_payment_path(@order), method: :post, id: "payment-form" do |form| %>
+    <div class="payment-form">
+      <%= form.label :amount, "Сума", class: "text-pay"%>
+      <%= form.text_field :amount, class: "text-amount", required: true %>
+    </div>
+
+    <div id="card-element"></div>
+    <div id="card-errors" role="alert" ></div>
+
+    <div>
+      <button type="submit" class="make-payment">Оплатити через Stripe</button>
+    </div>
+  <% end %>
+</turbo-frame>
+
+
+<script src="https://js.stripe.com/v3/" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        if (typeof Stripe !== "undefined") {
+            var stripe = Stripe("<%= Rails.configuration.stripe[:publishable_key] %>");
+            var elements = stripe.elements();
+
+            var card = elements.create("card", { hidePostalCode: true });
+            card.mount("#card-element");
+
+            card.addEventListener("change", function(event) {
+                var displayError = document.getElementById("card-errors");
+                if (event.error) {
+                    displayError.textContent = event.error.message;
+                } else {
+                    displayError.textContent = "";
+                }
+            });
+
+            var form = document.getElementById("payment-form");
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                stripe.createToken(card).then(function(result) {
+                    if (result.error) {
+                        var errorElement = document.getElementById("card-errors");
+                        errorElement.textContent = result.error.message;
+                    } else {
+                        var hiddenInput = document.createElement("input");
+                        hiddenInput.setAttribute("type", "hidden");
+                        hiddenInput.setAttribute("name", "stripeToken");
+                        hiddenInput.setAttribute("value", result.token.id);
+                        form.appendChild(hiddenInput);
+
+                        form.submit();
+                    }
+                });
+            });
+        } else {
+            console.error("Stripe is not defined.");
+        }
+    });
+</script>

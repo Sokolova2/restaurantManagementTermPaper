@@ -1,0 +1,23 @@
+<div class="dish-content">
+  <div class="about-dishes">
+    <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Фото страви" class="dish-image">
+    <div>
+      <p class="name-dishes"><%= menu_item.name %></p>
+      <p><%= menu_item.ingredients.map {|ingredient| ingredient.name }.join(", ") %></p>
+      <p><%= menu_item.grams %> гр</p>
+    </div>
+  </div>
+  <div class="create-cart-items">
+    <p class="price-dish"><%= menu_item.price %> грн</p>
+    <% unless session[:table_number].nil? %>
+      <%= form_with url: chip_baskets_path, method: :post, local: true do |form| %>
+        <%= hidden_field_tag :dish_and_drink_id, menu_item.id %>
+        <div class="dish-ordering">
+          <%= form.number_field :number_of_dish, min: 1, class: "quantity-input" %>
+          <%= form.submit "Додати до кошику", class: "btn-add-to-cart" %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+

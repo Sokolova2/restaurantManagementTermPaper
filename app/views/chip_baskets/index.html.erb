@@ -1,0 +1,40 @@
+<div>
+  <%= render partial: "layouts/header" , locals: {title: "Кошик"}%>
+  <% if @chip_basket.present? %>
+    <h3 class="header-order">Ваше замовлення</h3>
+    <div class="content-cart">
+      <% @chip_basket.chip_basket_items.each do |chip_basket_item| %>
+        <% dish = chip_basket_item.dish_and_drink %>
+        <div class="info-cart">
+          <div class="order-dishes">
+            <p class="text-dishes"><%= dish.name %></p>
+            <input type="number" value="<%= chip_basket_item.number_of_dish %>" class="input-number-of-dishes">
+            <p class="text-dishes"><%= dish.grams %> гр</p>
+            <p class="text-dishes"><%= dish.price * chip_basket_item.number_of_dish %> грн</p>
+            <%= button_to chip_basket_path(id: chip_basket_item.id, table_id: params[:table_id]), method: :delete, class: "btn-cart" do %>
+              <i class="fa-solid fa-trash"></i>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <p class="dishes-describe">Загальна сума: <%= @total_price %> грн</p>
+      <div class="btn-cart">
+        <%= button_to orders_path(table_id: params[:table_id]), method: :post, class: "button-order" do %>
+          Оформити замовлення
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
